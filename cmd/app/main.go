@@ -6,7 +6,7 @@ import (
 	//	_ "expvar"         //profiler
 	//	"net/http"         //profiler
 	//	_ "net/http/pprof" //profiler
-	"crypto-eth.com/connect/controller"
+	"github.com/bulenttokuzlu/crypto-eth-connect/controller"
 	"github.com/gofiber/fiber"
 )
 
@@ -29,26 +29,3 @@ func main() {
 	}
 
 }
-
-/*type GetTxnResponse struct {
-	Status string `json:"status"` //Running, Completed, Error, Success
-	Hash   string `json:"hash"`
-}
-
-func GetTxnInfo(c *fiber.Ctx) error {
-	conn, err := ethclient.Dial("https://mainnet.infura.io")
-	if err != nil {
-		log.Fatalf("Hadi len")
-	}
-	ctx := context.Background()
-	tx, pending, _ := conn.TransactionByHash(ctx, common.HexToHash(c.Params("id")))
-	if !pending {
-		c.JSON(tx)
-	} else {
-		resp := GetTxnResponse{Status: "Pending"}
-		resp.Hash = c.Params("id")
-		c.JSON(resp)
-	}
-	return nil
-}
-*/
